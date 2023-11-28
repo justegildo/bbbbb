@@ -16,7 +16,7 @@ app.use(express.json());
 var corsOptions = {
     "origin": "*",
     "optionsSuccessStatus": 204,
-    credentials: true,
+    "credentials": true,
     'allowedHeaders': ['sessionId', 'Content-Type', 'Authorization'],
     'exposedHeaders': ['sessionId'],
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,',
@@ -25,7 +25,7 @@ var corsOptions = {
 
 
 app.use(cors(corsOptions));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
