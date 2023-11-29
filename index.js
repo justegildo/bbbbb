@@ -9,6 +9,8 @@ const userRoutes = require('../back/src/routes/utilisateur.routes')
 const typeUserRoutes = require('../back/src/routes/typeUtilisateur.routes')
 const fileUploaRoutes = require('../back/src/routes/fileUpload.routes')
 const ecoleRoutes = require('../back/src/routes/ecole.routes')
+const eleveRoutes = require('../back/src/routes/eleve.routes')
+const matiereRoutes = require('../back/src/routes/matiere.routes')
 const verifyAuthToken = require ('./src/middleware/middleware')
 
 app.use(express.json());
@@ -41,12 +43,18 @@ app.use('/api/type-user',/* verifyAuthToken,*/ typeUserRoutes);
 //ecole
 app.use('/api/ecole',/* verifyAuthToken,*/ ecoleRoutes);
 
+//eleve
+app.use('/api/eleve',/* verifyAuthToken,*/ eleveRoutes);
+
+//matiere
+app.use('/api/matiere',/* verifyAuthToken,*/ matiereRoutes);
+
 //file upload
 app.use('/api/file-upload',  fileUploaRoutes);
 
 
 //le port
-app.listen(process.env.SERVEUR_PORT, () => 
+app.listen(process.env.SERVEUR_PORT, '192.168.100.26',  () => 
     console.log(`Server started in port ${process.env.SERVEUR_PORT} && aller sur le swagger http://localhost:${process.env.SERVEUR_PORT}/gestion-ecole-api-docs`
 ));
 //startApp();

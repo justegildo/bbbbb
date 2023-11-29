@@ -175,6 +175,42 @@ const swaggerDefinition = {
         ]
       },
 
+      Eleve: {
+        "type": "object",
+        "properties": {
+          "nom": {
+            "type": "string"
+          }, 
+          "prenoms": {
+            "type": "string"
+          }, 
+          "sexe": {
+            "type": "string"
+          }, 
+          "date_naissance": {
+            "type": "string"
+          }, 
+          "filiere": {
+            "type": "string"
+          }, 
+          "ecole": {
+            "type": "string"
+          }
+        }
+      },
+
+      Matiere: {
+        "type": "object",
+        "properties": {
+          "libelle": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "libelle"
+        ]
+      },
+
     }
   },
   servers: [
